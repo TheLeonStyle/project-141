@@ -1,0 +1,253 @@
+@use 'sass:math';
+
+$activeImageHeight:680px;
+$activeImageWidth: 80%;
+
+$gapSmallImage: 10px;
+$smallImageHeight: calc($activeImageHeight / 4);
+$smallImageWidth: 20%;
+
+
+.slider {
+	padding: 20px 0;
+	margin-bottom: 20px;
+
+	@media (max-width:770px){
+		padding: 20px 0 40px 0;
+	}
+	// .slider__wrapper
+	&__wrapper {
+		display: flex;
+		gap: 20px;
+
+		@media (max-width:991px){
+			flex-direction: column;
+		}
+		// @media (max-width: 415px) {
+		// 	width: 90%;
+		// 	margin: 0 auto;
+		// }
+		// @media (max-width: 380px) {
+		// 	width: 90%;
+		// 	margin: 0;
+		// }
+	}
+	// .slider__image
+	&__image {
+		cursor: pointer;
+		border-radius: 5px;
+
+
+		overflow: hidden;
+
+		img {
+			border-radius: 5px;
+
+			// max-width: 100%;
+			// object-fit: contain;
+			height: 100%;
+				width: 100%;
+				object-fit: cover;
+		}
+		// АКТИВНАЯ КАРТИНКА
+		&-active {
+			flex: 0 0 $activeImageWidth;
+			height: $activeImageHeight;
+
+			@media (max-width:991px){
+				// flex: 0 0 100%;
+			}
+			
+			img {
+				
+
+			}
+
+		}
+		// ПОБОЧНЫЕ КАРТИНКИ
+		&-small {
+			height: $smallImageHeight;
+			@media (max-width: 600px){
+				  height: 120px;
+			}
+			@media (max-width: 400px){
+				height: 100px;
+		}
+		@media (max-width: 360px){
+			height: 80px;
+	}
+			
+			img {
+				
+
+			}
+		}
+	}
+	// .slider__inner
+	&__inner {
+		flex: 0 1 $smallImageWidth;
+		position: relative;
+
+	}
+	// .slider__items
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: $gapSmallImage;
+
+		height: $activeImageHeight;
+
+		// overflow: auto;
+		// padding-right: 10px;
+		overflow: hidden;
+
+		@media (max-width:991px){
+			flex-direction: row;
+			height: auto;
+		}
+
+	}
+	// .slider__item
+	&__item {
+		
+		transition: box-shadow 0.3s ease 0s;
+		img {
+		border: 2px solid rgb(10, 10, 194,0.6);
+		&:hover {
+			box-shadow: 4px 4px 4px 0px rgba(34, 60, 80, 0.6);
+		}
+		}
+		
+
+		// &.active {
+		// 	border: 2px solid rgb(10, 10, 194,0.3);
+		// }
+		
+	}
+	// slider__navigation
+	&__navigation {
+		
+	
+		button {
+			position: absolute;
+	
+			width: 30px;
+			height: 30px;
+			background-color: #fff;
+			border: 2px solid rgb(10, 10, 194,0.3);
+			border-radius: 50%;
+			transition: all 0.3s ease 0s;
+
+			@media (max-width:770px){
+				width: 40px;
+				height: 40px;
+			}
+			@media (max-width: 600px){
+				width: 35px;
+				height: 35px;
+			}
+
+			&:hover {
+				background-color: #b2d1f1;
+				transition: all 0.3s ease 0s;
+				svg {
+					fill: rgb(10, 10, 194,0.3);
+				}
+			}
+	
+			svg {
+				fill: rgb(10, 10, 194,0.6);
+			}
+
+			
+	
+			&.slider__button-up {
+				top: -15px;
+				left: 50%;
+				transform: translate(-50%,0px) rotate(-90deg);
+
+				@media (max-width:991px){
+					left: 0px;
+					top: 50%;
+					transform: translate(-50%,-50%) rotate(180deg);
+				}
+				@media (max-width:770px){
+					left: 40%;
+					top: 100%;
+				}
+			}
+			&.slider__button-down {
+				bottom: -15px;
+				left: 50%;
+				transform: translate(-50%,0px) rotate(90deg);
+				@media (max-width:991px){
+					left: auto;
+					right: -15px;
+					top: 50%;
+					transform: translate(0px,-50%) rotate(360deg);
+				}
+				@media (max-width:770px){
+					left: 60%;
+					top: 100%;
+				}
+			}
+	
+		}
+	}
+}
+
+.description,
+.info-hotel__contacts,
+.slider__location {
+	margin-bottom: 20px;
+}
+
+.container {
+	@media (max-width: 415px) {
+		padding: 0 5px;
+		margin: 0;
+	}
+}
+
+.contacts__item {
+	@media (max-width:390px){
+		text-align: center;
+		
+	}
+}
+.contacts__item-user {
+	@media (max-width:390px){
+		flex-direction: column;
+		
+	}
+}
+
+
+.author {
+	background-color: red;
+	text-align: center;
+	a {
+		color: #fff;
+		font-size: 22px;
+	}
+}
+
+// .container-right {
+// 	/* overflow-x: hidden; */
+// 	padding-left: calc((100% - var(--container-width)) / 2 + var(--container-padding));
+// }
+// @media (max-width: var(--laptop-size)) {
+// 	.container-right {
+// 		padding-left: var(--container-padding);
+// 	}
+// }
+
+// .container-left {
+// 	/* overflow-x: hidden; */
+// 	padding-right: calc((100% - var(--container-width)) / 2 + var(--container-padding));
+// }
+// @media (max-width: var(--laptop-size)) {
+// 	.container-left {
+// 		padding-right: var(--container-padding);
+// 	}
+// }

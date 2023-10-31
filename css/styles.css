@@ -1,0 +1,180 @@
+.slider {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+@media (max-width: 770px) {
+  .slider {
+    padding: 20px 0 40px 0;
+  }
+}
+.slider__wrapper {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 991px) {
+  .slider__wrapper {
+    flex-direction: column;
+  }
+}
+.slider__image {
+  cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.slider__image img {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slider__image-active {
+  flex: 0 0 80%;
+  height: 680px;
+}
+.slider__image-small {
+  height: 170px;
+}
+@media (max-width: 600px) {
+  .slider__image-small {
+    height: 120px;
+  }
+}
+@media (max-width: 400px) {
+  .slider__image-small {
+    height: 100px;
+  }
+}
+@media (max-width: 360px) {
+  .slider__image-small {
+    height: 80px;
+  }
+}
+.slider__inner {
+  flex: 0 1 20%;
+  position: relative;
+}
+.slider__items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 680px;
+  overflow: hidden;
+}
+@media (max-width: 991px) {
+  .slider__items {
+    flex-direction: row;
+    height: auto;
+  }
+}
+.slider__item {
+  transition: box-shadow 0.3s ease 0s;
+}
+.slider__item img {
+  border: 2px solid rgba(10, 10, 194, 0.6);
+}
+.slider__item img:hover {
+  box-shadow: 4px 4px 4px 0px rgba(34, 60, 80, 0.6);
+}
+.slider__navigation button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 2px solid rgba(10, 10, 194, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 770px) {
+  .slider__navigation button {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .slider__navigation button {
+    width: 35px;
+    height: 35px;
+  }
+}
+.slider__navigation button:hover {
+  background-color: #b2d1f1;
+  transition: all 0.3s ease 0s;
+}
+.slider__navigation button:hover svg {
+  fill: rgba(10, 10, 194, 0.3);
+}
+.slider__navigation button svg {
+  fill: rgba(10, 10, 194, 0.6);
+}
+.slider__navigation button.slider__button-up {
+  top: -15px;
+  left: 50%;
+  transform: translate(-50%, 0px) rotate(-90deg);
+}
+@media (max-width: 991px) {
+  .slider__navigation button.slider__button-up {
+    left: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+@media (max-width: 770px) {
+  .slider__navigation button.slider__button-up {
+    left: 40%;
+    top: 100%;
+  }
+}
+.slider__navigation button.slider__button-down {
+  bottom: -15px;
+  left: 50%;
+  transform: translate(-50%, 0px) rotate(90deg);
+}
+@media (max-width: 991px) {
+  .slider__navigation button.slider__button-down {
+    left: auto;
+    right: -15px;
+    top: 50%;
+    transform: translate(0px, -50%) rotate(360deg);
+  }
+}
+@media (max-width: 770px) {
+  .slider__navigation button.slider__button-down {
+    left: 60%;
+    top: 100%;
+  }
+}
+
+.description,
+.info-hotel__contacts,
+.slider__location {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 415px) {
+  .container {
+    padding: 0 5px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .contacts__item {
+    text-align: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .contacts__item-user {
+    flex-direction: column;
+  }
+}
+
+.author {
+  background-color: red;
+  text-align: center;
+}
+.author a {
+  color: #fff;
+  font-size: 22px;
+}
